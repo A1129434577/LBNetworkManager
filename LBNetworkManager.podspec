@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author       = { "刘彬" => "1129434577@qq.com" }
   spec.platform     = :ios
-  spec.ios.deployment_target = '8.0'
+  spec.ios.deployment_target = '9.0'
   spec.source       = { :git => 'https://github.com/A1129434577/LBNetworkManager.git', :tag => spec.version.to_s }
   spec.dependency     "AFNetworking"
   spec.source_files = "LBNetworkManager/**/*.{h,m}"
