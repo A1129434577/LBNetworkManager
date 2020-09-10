@@ -1,0 +1,83 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - LBCommonComponents (1.1.0):
+    - LBCommonComponents/Base (= 1.1.0)
+    - LBCommonComponents/Category (= 1.1.0)
+    - LBCommonComponents/Macros (= 1.1.0)
+  - LBCommonComponents/Base (1.1.0):
+    - LBCommonComponents/Base/Views (= 1.1.0)
+  - LBCommonComponents/Base/Views (1.1.0)
+  - LBCommonComponents/Category (1.1.0):
+    - "LBCommonComponents/Category/NSArray+Safe (= 1.1.0)"
+    - "LBCommonComponents/Category/NSDate+ToString (= 1.1.0)"
+    - "LBCommonComponents/Category/NSDictionary+Safe (= 1.1.0)"
+    - "LBCommonComponents/Category/NSNull+Safe (= 1.1.0)"
+    - "LBCommonComponents/Category/NSObject+MethodSwizzling (= 1.1.0)"
+    - "LBCommonComponents/Category/NSObject+TopViewController (= 1.1.0)"
+    - "LBCommonComponents/Category/NSObject+TypeSafe (= 1.1.0)"
+    - "LBCommonComponents/Category/NSString+ToDate (= 1.1.0)"
+    - "LBCommonComponents/Category/UIButton+Action (= 1.1.0)"
+    - "LBCommonComponents/Category/UIImage+Color (= 1.1.0)"
+    - "LBCommonComponents/Category/UIView+Copy (= 1.1.0)"
+    - "LBCommonComponents/Category/UIView+Geometry (= 1.1.0)"
+  - "LBCommonComponents/Category/NSArray+Safe (1.1.0)":
+    - "LBCommonComponents/Category/NSObject+MethodSwizzling"
+  - "LBCommonComponents/Category/NSDate+ToString (1.1.0)"
+  - "LBCommonComponents/Category/NSDictionary+Safe (1.1.0)":
+    - "LBCommonComponents/Category/NSObject+MethodSwizzling"
+  - "LBCommonComponents/Category/NSNull+Safe (1.1.0)"
+  - "LBCommonComponents/Category/NSObject+MethodSwizzling (1.1.0)"
+  - "LBCommonComponents/Category/NSObject+TopViewController (1.1.0)"
+  - "LBCommonComponents/Category/NSObject+TypeSafe (1.1.0)"
+  - "LBCommonComponents/Category/NSString+ToDate (1.1.0)"
+  - "LBCommonComponents/Category/UIButton+Action (1.1.0)"
+  - "LBCommonComponents/Category/UIImage+Color (1.1.0)"
+  - "LBCommonComponents/Category/UIView+Copy (1.1.0)"
+  - "LBCommonComponents/Category/UIView+Geometry (1.1.0)"
+  - LBCommonComponents/Macros (1.1.0)
+  - LBUserInfo (1.0.1):
+    - LBUserInfo/LBUserLocation (= 1.0.1)
+    - LBUserInfo/LBUserModel (= 1.0.1)
+    - LBUserInfo/LBUserSystemAuth (= 1.0.1)
+    - LBUserInfo/LBUserTempOperateInfo (= 1.0.1)
+  - LBUserInfo/LBUserLocation (1.0.1):
+    - LBUserInfo/LBUserModel
+  - LBUserInfo/LBUserModel (1.0.1)
+  - LBUserInfo/LBUserSystemAuth (1.0.1):
+    - LBUserInfo/LBUserModel
+  - LBUserInfo/LBUserTempOperateInfo (1.0.1):
+    - LBUserInfo/LBUserModel
+
+DEPENDENCIES:
+  - AFNetworking
+  - LBCommonComponents
+  - LBUserInfo
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - LBCommonComponents
+    - LBUserInfo
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  LBCommonComponents: 18620e3013c1d3c1b89788acc3899ef24f84755d
+  LBUserInfo: f0fb16d039c5b649fc1e3ac68f3a46395a9f76b8
+
+PODFILE CHECKSUM: 36a243e8c7beea61d8eb550c4938d6d7b48a04f2
+
+COCOAPODS: 1.10.0.beta.2
