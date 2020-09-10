@@ -19,6 +19,7 @@ extern NSString *const NetworkResponseFailedNotificationName;
 extern NSString *const NetworkUploadFileNameKey;
 
 @interface LBNetworkManager : NSObject
+@property (nonatomic, strong) NSString *baseUrlString;
 @property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
 
 @property (nonatomic, copy  ) void(^sessionManagerCustomConfigHandler)(AFHTTPSessionManager *sessionManager);

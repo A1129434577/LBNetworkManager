@@ -37,9 +37,7 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     //url处理
     NSString *postUrl = parameters[NETWORK_URL_KEY];
     if (postUrl == nil) {
-#ifdef NETWORK_HOST_NAME
-        postUrl = [NETWORK_HOST_NAME stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
-#endif
+        postUrl = [[LBNetworkManager manager].baseUrlString stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
     }
     if (postUrl == nil) {
         postUrl = parameters[NETWORK_API_KEY];
@@ -75,9 +73,7 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     //url处理
     NSString *getUrl = parameters[NETWORK_URL_KEY];
     if (getUrl == nil) {
-#ifdef NETWORK_HOST_NAME
-        getUrl = [NETWORK_HOST_NAME stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
-#endif
+        getUrl = [[LBNetworkManager manager].baseUrlString stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
     }
     if (getUrl == nil) {
         getUrl = parameters[NETWORK_API_KEY];
@@ -115,9 +111,7 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     //url处理
     NSString *uploadUrl = parameters[NETWORK_URL_KEY];
     if (uploadUrl == nil) {
-#ifdef NETWORK_HOST_NAME
-        uploadUrl = [NETWORK_HOST_NAME stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
-#endif
+        uploadUrl = [[LBNetworkManager manager].baseUrlString stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
     }
     if (uploadUrl == nil) {
         uploadUrl = parameters[NETWORK_API_KEY];
@@ -161,9 +155,7 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     //url处理
     NSString *putUrl = parameters[NETWORK_URL_KEY];
     if (putUrl == nil) {
-#ifdef NETWORK_HOST_NAME
-        putUrl = [NETWORK_HOST_NAME stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
-#endif
+        putUrl = [[LBNetworkManager manager].baseUrlString stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
     }
     if (putUrl == nil) {
         putUrl = parameters[NETWORK_API_KEY];
@@ -200,9 +192,7 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     //url处理
     NSString *patchUrl = parameters[NETWORK_URL_KEY];
     if (patchUrl == nil) {
-#ifdef NETWORK_HOST_NAME
-        patchUrl = [NETWORK_HOST_NAME stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
-#endif
+        patchUrl = [[LBNetworkManager manager].baseUrlString stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
     }
     if (patchUrl == nil) {
         patchUrl = parameters[NETWORK_API_KEY];
@@ -239,9 +229,7 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     //url处理
     NSString *deleteUrl = parameters[NETWORK_URL_KEY];
     if (deleteUrl == nil) {
-#ifdef NETWORK_HOST_NAME
-        deleteUrl = [NETWORK_HOST_NAME stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
-#endif
+        deleteUrl = [[LBNetworkManager manager].baseUrlString stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
     }
     if (deleteUrl == nil) {
         deleteUrl = parameters[NETWORK_API_KEY];
