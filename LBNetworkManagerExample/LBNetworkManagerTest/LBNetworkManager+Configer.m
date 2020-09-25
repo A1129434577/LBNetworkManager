@@ -65,18 +65,18 @@
         
     };
     
-    [LBNetworkManager manager].postCustomConfigHandler = ^(NSMutableDictionary<NSString *,id> * _Nonnull parameters, NSMutableDictionary<NSString *,NSString *> * _Nonnull headers) {
+    [LBNetworkManager manager].POSTCustomConfigHandler = ^(NSMutableDictionary<NSString *,id> * _Nonnull parameters, NSMutableDictionary<NSString *,NSString *> * _Nonnull headers) {
         [LBNetworkManager handleHeaders:headers];
         //[NetworkManager handleParameters:parameters];
     };
     
     
-    [LBNetworkManager manager].getCustomConfigHandler = ^(NSMutableDictionary<NSString *,id> * _Nonnull parameters, NSMutableDictionary<NSString *,NSString *> * _Nonnull headers) {
+    [LBNetworkManager manager].GETCustomConfigHandler = ^(NSMutableDictionary<NSString *,id> * _Nonnull parameters, NSMutableDictionary<NSString *,NSString *> * _Nonnull headers) {
         [LBNetworkManager handleHeaders:headers];
         //[NetworkManager handleParameters:parameters];
     };
     
-    [LBNetworkManager manager].uploadCustomConfigHandler = ^(NSMutableDictionary<NSString *,id> * _Nonnull parameters, NSMutableDictionary<NSString *,NSString *> * _Nonnull headers) {
+    [LBNetworkManager manager].UPLOADCustomConfigHandler = ^(NSMutableDictionary<NSString *,id> * _Nonnull parameters, NSMutableDictionary<NSString *,NSString *> * _Nonnull headers) {
         [LBNetworkManager handleHeaders:headers];
         //[NetworkManager handleParameters:parameters];
     };

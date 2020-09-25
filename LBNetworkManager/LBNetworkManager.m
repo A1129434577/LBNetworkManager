@@ -39,9 +39,6 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     if (postUrl == nil) {
         postUrl = [[LBNetworkManager manager].baseUrlString stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
     }
-    if (postUrl == nil) {
-        postUrl = parameters[NETWORK_API_KEY];
-    }
     
     //参数处理
     NSMutableDictionary *newParams = [NSMutableDictionary dictionary];
@@ -52,8 +49,8 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     NSMutableDictionary *newHeaders = [NSMutableDictionary dictionary];
     [newHeaders addEntriesFromDictionary:headers];
     
-    if ([LBNetworkManager manager].postCustomConfigHandler) {
-        [LBNetworkManager manager].postCustomConfigHandler(newParams,newHeaders);
+    if ([LBNetworkManager manager].POSTCustomConfigHandler) {
+        [LBNetworkManager manager].POSTCustomConfigHandler(newParams,newHeaders);
     }
     
     [[LBNetworkManager manager].sessionManager POST:postUrl parameters:newParams headers:newHeaders progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -75,9 +72,6 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     if (getUrl == nil) {
         getUrl = [[LBNetworkManager manager].baseUrlString stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
     }
-    if (getUrl == nil) {
-        getUrl = parameters[NETWORK_API_KEY];
-    }
     
     //参数处理
     NSMutableDictionary *newParams = [NSMutableDictionary dictionary];
@@ -88,8 +82,8 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     NSMutableDictionary *newHeaders = [NSMutableDictionary dictionary];
     [newHeaders addEntriesFromDictionary:headers];
     
-    if ([LBNetworkManager manager].getCustomConfigHandler) {
-        [LBNetworkManager manager].getCustomConfigHandler(newParams,newHeaders);
+    if ([LBNetworkManager manager].GETCustomConfigHandler) {
+        [LBNetworkManager manager].GETCustomConfigHandler(newParams,newHeaders);
     }
     [[LBNetworkManager manager].sessionManager GET:getUrl parameters:newParams headers:newHeaders progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success?success(responseObject):NULL;
@@ -113,9 +107,6 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     if (uploadUrl == nil) {
         uploadUrl = [[LBNetworkManager manager].baseUrlString stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
     }
-    if (uploadUrl == nil) {
-        uploadUrl = parameters[NETWORK_API_KEY];
-    }
     
     //参数处理
     NSMutableDictionary *newParams = [NSMutableDictionary dictionary];
@@ -126,8 +117,8 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     NSMutableDictionary *newHeaders = [NSMutableDictionary dictionary];
     [newHeaders addEntriesFromDictionary:headers];
     
-    if ([LBNetworkManager manager].uploadCustomConfigHandler) {
-        [LBNetworkManager manager].uploadCustomConfigHandler(newParams,newHeaders);
+    if ([LBNetworkManager manager].UPLOADCustomConfigHandler) {
+        [LBNetworkManager manager].UPLOADCustomConfigHandler(newParams,newHeaders);
     }
     
     [[LBNetworkManager manager].sessionManager POST:uploadUrl parameters:newParams headers:newHeaders constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
@@ -157,9 +148,6 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     if (putUrl == nil) {
         putUrl = [[LBNetworkManager manager].baseUrlString stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
     }
-    if (putUrl == nil) {
-        putUrl = parameters[NETWORK_API_KEY];
-    }
     
     //参数处理
     NSMutableDictionary *newParams = [NSMutableDictionary dictionary];
@@ -170,8 +158,8 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     NSMutableDictionary *newHeaders = [NSMutableDictionary dictionary];
     [newHeaders addEntriesFromDictionary:headers];
     
-    if ([LBNetworkManager manager].putCustomConfigHandler) {
-        [LBNetworkManager manager].putCustomConfigHandler(newParams,newHeaders);
+    if ([LBNetworkManager manager].PUTCustomConfigHandler) {
+        [LBNetworkManager manager].PUTCustomConfigHandler(newParams,newHeaders);
     }
     
     [[LBNetworkManager manager].sessionManager PUT:putUrl parameters:newParams headers:newHeaders success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -194,9 +182,6 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     if (patchUrl == nil) {
         patchUrl = [[LBNetworkManager manager].baseUrlString stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
     }
-    if (patchUrl == nil) {
-        patchUrl = parameters[NETWORK_API_KEY];
-    }
     
     //参数处理
     NSMutableDictionary *newParams = [NSMutableDictionary dictionary];
@@ -207,8 +192,8 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     NSMutableDictionary *newHeaders = [NSMutableDictionary dictionary];
     [newHeaders addEntriesFromDictionary:headers];
     
-    if ([LBNetworkManager manager].patchCustomConfigHandler) {
-        [LBNetworkManager manager].patchCustomConfigHandler(newParams,newHeaders);
+    if ([LBNetworkManager manager].PATCHCustomConfigHandler) {
+        [LBNetworkManager manager].PATCHCustomConfigHandler(newParams,newHeaders);
     }
     
     [[LBNetworkManager manager].sessionManager PATCH:patchUrl parameters:newParams headers:newHeaders success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -231,9 +216,6 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     if (deleteUrl == nil) {
         deleteUrl = [[LBNetworkManager manager].baseUrlString stringByAppendingPathComponent:parameters[NETWORK_API_KEY]];
     }
-    if (deleteUrl == nil) {
-        deleteUrl = parameters[NETWORK_API_KEY];
-    }
     
     //参数处理
     NSMutableDictionary *newParams = [NSMutableDictionary dictionary];
@@ -244,8 +226,8 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     NSMutableDictionary *newHeaders = [NSMutableDictionary dictionary];
     [newHeaders addEntriesFromDictionary:headers];
     
-    if ([LBNetworkManager manager].deleteCustomConfigHandler) {
-        [LBNetworkManager manager].deleteCustomConfigHandler(newParams,newHeaders);
+    if ([LBNetworkManager manager].DELETECustomConfigHandler) {
+        [LBNetworkManager manager].DELETECustomConfigHandler(newParams,newHeaders);
     }
     
     [[LBNetworkManager manager].sessionManager DELETE:deleteUrl parameters:newParams headers:newHeaders success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -259,4 +241,11 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     }];
 }
 
+#pragma mark getter
+-(NSString *)baseUrlString{
+    if (_baseUrlString.length == 0) {
+        _baseUrlString = @"";
+    }
+    return _baseUrlString;
+}
 @end

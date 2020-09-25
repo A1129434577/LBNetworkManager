@@ -24,12 +24,12 @@ extern NSString *const NetworkUploadFileNameKey;
 
 @property (nonatomic, copy  ) void(^sessionManagerCustomConfigHandler)(AFHTTPSessionManager *sessionManager);
 
-@property (nonatomic, copy  ) void(^postCustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
-@property (nonatomic, copy  ) void(^getCustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
-@property (nonatomic, copy  ) void(^uploadCustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
-@property (nonatomic, copy  ) void(^putCustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
-@property (nonatomic, copy  ) void(^patchCustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
-@property (nonatomic, copy  ) void(^deleteCustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
+@property (nonatomic, copy  ) void(^POSTCustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
+@property (nonatomic, copy  ) void(^GETCustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
+@property (nonatomic, copy  ) void(^UPLOADCustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
+@property (nonatomic, copy  ) void(^PUTCustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
+@property (nonatomic, copy  ) void(^PATCHCustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
+@property (nonatomic, copy  ) void(^DELETECustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
 
 +(LBNetworkManager *)manager;
 
