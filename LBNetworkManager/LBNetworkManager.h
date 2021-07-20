@@ -27,6 +27,7 @@ extern NSString *const NetworkUploadFileNameKey;
 @property (nonatomic, copy  ) void(^POSTCustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
 @property (nonatomic, copy  ) void(^GETCustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
 @property (nonatomic, copy  ) void(^UPLOADCustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
+@property (nonatomic, copy  ) void(^UPLOADMultipartFormDataCustomConfigHandler)(id<AFMultipartFormData> formData);
 @property (nonatomic, copy  ) void(^PUTCustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
 @property (nonatomic, copy  ) void(^PATCHCustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
 @property (nonatomic, copy  ) void(^DELETECustomConfigHandler)(NSMutableDictionary<NSString *,id> *parameters, NSMutableDictionary <NSString *, NSString *> *headers);
@@ -43,12 +44,11 @@ extern NSString *const NetworkUploadFileNameKey;
                  success:(nullable void (^)(id _Nullable result))success
                  failure:(nullable void (^)(NSError *_Nullable error))failure;
 
-+(void)uploadFiles:(NSArray<NSData *> *)filesData
-        parameters:(NSDictionary<NSString *, id> *)parameters
-           headers:(nullable NSDictionary <NSString *, NSString *> *)headers
-          progress:(nullable void (^)(NSProgress *uploadProgress))progress
-           success:(nullable void (^)(id _Nullable result))success
-           failure:(nullable void (^)(NSError *_Nullable error))failure;
++(void)uploadFile:(NSData *)fileData
+       parameters:(NSDictionary<NSString *,id> *)parameters
+          headers:(nullable NSDictionary <NSString *, NSString *> *)headers
+         progress:(void (^)(NSProgress * _Nonnull))progress
+          success:(void (^)(id _Nullable))success failure:(void (^)(NSError * _Nullable))failure;
 
 +(void)PUTWithParameters:(NSDictionary<NSString *, id> *)parameters
                  headers:(nullable NSDictionary <NSString *, NSString *> *)headers

@@ -97,11 +97,11 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
 }
 
 
-+(void)uploadFiles:(NSArray<NSData *> *)filesData
-        parameters:(NSDictionary<NSString *,id> *)parameters
-           headers:(nullable NSDictionary <NSString *, NSString *> *)headers
-          progress:(void (^)(NSProgress * _Nonnull))progress
-           success:(void (^)(id _Nullable))success failure:(void (^)(NSError * _Nullable))failure{
++(void)uploadFile:(NSData *)fileData
+       parameters:(NSDictionary<NSString *,id> *)parameters
+          headers:(nullable NSDictionary <NSString *, NSString *> *)headers
+         progress:(void (^)(NSProgress * _Nonnull))progress
+          success:(void (^)(id _Nullable))success failure:(void (^)(NSError * _Nullable))failure{
     //url处理
     NSString *uploadUrl = parameters[NETWORK_URL_KEY];
     if (uploadUrl == nil) {
@@ -122,9 +122,10 @@ NSString *const NetworkUploadFileNameKey = @"NetworkUploadFileNameKey";
     }
     
     [[LBNetworkManager manager].sessionManager POST:uploadUrl parameters:newParams headers:newHeaders constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        [filesData enumerateObjectsUsingBlock:^(NSData * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [formData appendPartWithFileData:obj name:parameters[NetworkUploadFileNameKey] fileName:@"file.jpg" mimeType:@"image/jpeg"];
-        }];
+        if ([LBNetworkManager manager].UPLOADMultipartFormDataCustomConfigHandler) {
+            [LBNetworkManager manager].UPLOADMultipartFormDataCustomConfigHandler(formData);
+        }
+        [formData appendPartWithFileData:fileData name:parameters[NetworkUploadFileNameKey] fileName:@"file.jpg" mimeType:@"image/jpeg"];
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         progress?progress(uploadProgress):NULL;
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
